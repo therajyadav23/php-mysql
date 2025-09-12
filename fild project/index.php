@@ -33,7 +33,7 @@
         <a href="learnmore.php"button class="btn btn-outline">Learn More</button></a>
       </div>
     </div>
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616489.png" alt="Blood Donation">
+    <img src="images/1711775006506.jpg" alt="Blood Donation">
   </section>
 
   <!-- Features -->

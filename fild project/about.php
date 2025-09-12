@@ -4,6 +4,88 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About Us - LifeSaver Blood Donation</title>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="index.php">Home</a>
+    <a href="about.php">About Us</a>
+    <a href="register.php">Donor Register</a>
+    <a href="search.php">Find Donor</a>
+    <a href="records.php">Records</a>
+  </nav>
+
+  <!-- Hero Header -->
+  <header>
+    <h1>About Us</h1>
+    <p>Together, we create a world where every drop counts.</p>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+
+    <!-- Introduction -->
+    <div class="section">
+      <div>
+        <h2>Who We Are</h2>
+        <p>
+          We are LifeSavers, a community-driven organization committed to the belief that every drop of blood has the power to save a life.
+          Founded on compassion, purpose, and a mission to serve humanity, our organization brings together donors, volunteers, healthcare professionals, and partners with one goal — to ensure a safe, reliable blood supply for those in need.
+          <br><br>
+          Whether it’s organizing mobile donation drives, educating communities about the importance of regular donation, or supporting hospitals with timely blood delivery — we act with urgency, empathy, and integrity.
+        </p>
+      </div>
+      <div>
+        <img src="images\images[1].jpg" alt="About Us">
+      </div>
+    </div>
+
+    <!-- Mission -->
+    <div class="section">
+      <div>
+        <img src="images/mission.jpg" alt="Mission">
+      </div>
+      <div>
+        <h2>Our Mission</h2>
+        <p>
+          Our mission is to save lives by encouraging voluntary, safe, and regular blood donation through accessible, community-based camps that foster awareness, compassion, and a sense of social responsibility.
+          <br><br>
+          We aim to:
+          <br>• Ensure a safe and sufficient blood supply for hospitals and patients in critical need.
+          <br>• Educate and engage the public on the importance of regular blood donation.
+          <br>• Build a culture of giving by connecting compassionate donors with life-saving causes.
+          <br>• Promote voluntary and non-remunerated donations that uphold the highest standards of ethics and safety.
+        </p>
+      </div>
+    </div>
+
+    <!-- Vision -->
+    <div class="section">
+      <div>
+        <h2>Our Vision</h2>
+        <p>
+          A world where every individual in need of blood receives it on time, through a community built on compassion, responsibility, and voluntary donation.
+          <br><br>
+          We envision:
+          <br>• A future where no life is lost due to a shortage of blood.
+          <br>• A society where voluntary blood donation is a regular act of kindness.
+          <br>• A healthcare system with safe, sufficient, and accessible blood for all patients.
+          <br>• A global network of informed and empowered donors who understand their vital role in saving lives.
+        </p>
+      </div>
+      <div>
+        <img src="images/vision.jpg" alt="Vision">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 LifeSaver Blood Donation. All rights reserved.</p>
+  </footer>
+<style>
   <style>
     /* Reset & Base */
     * {
@@ -132,87 +214,5 @@
       }
     }
   </style>
-</head>
-<body>
-
-  <!-- Navbar -->
-  <nav>
-    <a href="index.php">Home</a>
-    <a href="about.php">About Us</a>
-    <a href="register.php">Donor Register</a>
-    <a href="search.php">Find Donor</a>
-    <a href="records.php">Records</a>
-  </nav>
-
-  <!-- Hero Header -->
-  <header>
-    <h1>About Us</h1>
-    <p>Together, we create a world where every drop counts.</p>
-  </header>
-
-  <!-- Main Content -->
-  <div class="container">
-
-    <!-- Introduction -->
-    <div class="section">
-      <div>
-        <h2>Who We Are</h2>
-        <p>
-          We are LifeSavers, a community-driven organization committed to the belief that every drop of blood has the power to save a life.
-          Founded on compassion, purpose, and a mission to serve humanity, our organization brings together donors, volunteers, healthcare professionals, and partners with one goal — to ensure a safe, reliable blood supply for those in need.
-          <br><br>
-          Whether it’s organizing mobile donation drives, educating communities about the importance of regular donation, or supporting hospitals with timely blood delivery — we act with urgency, empathy, and integrity.
-        </p>
-      </div>
-      <div>
-        <img src="images/images1.jpg" alt="About Us">
-      </div>
-    </div>
-
-    <!-- Mission -->
-    <div class="section">
-      <div>
-        <img src="images/mission.jpg" alt="Mission">
-      </div>
-      <div>
-        <h2>Our Mission</h2>
-        <p>
-          Our mission is to save lives by encouraging voluntary, safe, and regular blood donation through accessible, community-based camps that foster awareness, compassion, and a sense of social responsibility.
-          <br><br>
-          We aim to:
-          <br>• Ensure a safe and sufficient blood supply for hospitals and patients in critical need.
-          <br>• Educate and engage the public on the importance of regular blood donation.
-          <br>• Build a culture of giving by connecting compassionate donors with life-saving causes.
-          <br>• Promote voluntary and non-remunerated donations that uphold the highest standards of ethics and safety.
-        </p>
-      </div>
-    </div>
-
-    <!-- Vision -->
-    <div class="section">
-      <div>
-        <h2>Our Vision</h2>
-        <p>
-          A world where every individual in need of blood receives it on time, through a community built on compassion, responsibility, and voluntary donation.
-          <br><br>
-          We envision:
-          <br>• A future where no life is lost due to a shortage of blood.
-          <br>• A society where voluntary blood donation is a regular act of kindness.
-          <br>• A healthcare system with safe, sufficient, and accessible blood for all patients.
-          <br>• A global network of informed and empowered donors who understand their vital role in saving lives.
-        </p>
-      </div>
-      <div>
-        <img src="images/vision.jpg" alt="Vision">
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 LifeSaver Blood Donation. All rights reserved.</p>
-  </footer>
-
 </body>
 </html>

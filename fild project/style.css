@@ -118,10 +118,12 @@ nav .links a.active {
 
 .hero img {
   flex: 1;
-  max-width: 400px;
+  max-width: 100%;
+  width: 600px;   
+  height: auto;      
   margin-top: 20px;
+  display: block;
 }
-
 /* Features */
 .features {
   background: #fff5f5;
