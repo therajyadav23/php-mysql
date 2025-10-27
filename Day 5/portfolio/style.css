@@ -1,0 +1,66 @@
+/* General body styling */
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding-top: 70px;
+}
+
+/* Navbar customization */
+.navbar-inverse {
+  background-color: #222;
+  border-color: #080808;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #fff;
+  font-weight: bold;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #ddd;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+  background-color: #080808;
+  color: #fff;
+}
+
+/* Form container */
+form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Form elements */
+.form-group label {
+  font-weight: 600;
+}
+
+.form-control {
+  border-radius: 4px;
+  box-shadow: none;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #5cb85c;
+  outline: none;
+}
+
+/* Submit button */
+button[type="submit"] {
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #4cae4c;
+}
