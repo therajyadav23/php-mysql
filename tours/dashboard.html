@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard | TravelIndia</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body{
+  margin:0;
+  font-family:Poppins,sans-serif;
+  background:#f4f6f9;
+}
+header{
+  background:#222;
+  color:#fff;
+  padding:15px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+header button{
+  background:#ff5722;
+  border:none;
+  padding:8px 16px;
+  color:#fff;
+  border-radius:5px;
+  cursor:pointer;
+}
+.container{
+  max-width:1000px;
+  margin:40px auto;
+}
+.card{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:20px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+.booking{
+  border-left:5px solid #0078ff;
+  padding-left:15px;
+  margin-bottom:15px;
+}
+</style>
+</head>
+
+<body>
+
+<script>
+if(localStorage.getItem("isLoggedIn")!=="true"){
+  window.location.href="login.html";
+}
+</script>
+
+<header>
+  <h2>Welcome to TravelIndia</h2>
+  <button onclick="logout()">Logout</button>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h3>Your Bookings</h3>
+    <div id="bookingList"></div>
+  </div>
+
+  <div class="card">
+    <button onclick="window.location.href='booking-details.html'"
+      style="padding:12px 20px;background:#0078ff;border:none;color:#fff;border-radius:6px;cursor:pointer;">
+      + New Booking
+    </button>
+  </div>
+
+</div>
+
+<script>
+function logout(){
+  localStorage.removeItem("isLoggedIn");
+  localStorage.removeItem("currentUser");
+  window.location.href="index.php";
+}
+
+let users = JSON.parse(localStorage.getItem("users")) || [];
+let currentUser = localStorage.getItem("currentUser");
+let user = users.find(u=>u.email===currentUser);
+
+let bookingList = document.getElementById("bookingList");
+
+if(!user || user.bookings.length===0){
+  bookingList.innerHTML="<p>No bookings yet.</p>";
+}else{
+  user.bookings.forEach(b=>{
+    bookingList.innerHTML += `
+      <div class="booking">
+        <strong>${b.type}</strong><br>
+        ${b.from} → ${b.to}<br>
+        Date: ${b.date}<br>
+        Passengers: ${b.passengers}
+      </div>
+    `;
+  });
+}
+</script>
+
+</body>
+</html>

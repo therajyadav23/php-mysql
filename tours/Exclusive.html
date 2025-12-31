@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exclusive Travel Offers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body{
+      background: linear-gradient(135deg, #6dd5fa, #2980b9);
+      padding:40px 10px;
+      color:#222;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:auto;
+    }
+
+    .title{
+      text-align:center;
+      color:white;
+      margin-bottom:25px;
+      font-size:32px;
+      font-weight:700;
+      letter-spacing:1px;
+    }
+
+    .offers{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:white;
+      border-radius:18px;
+      padding:20px;
+      box-shadow:0 15px 25px rgba(0,0,0,0.15);
+      transition:0.3s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card:hover{
+      transform:translateY(-8px) scale(1.01);
+      box-shadow:0 20px 35px rgba(0,0,0,0.2);
+    }
+
+    .badge{
+      position:absolute;
+      top:0;
+      right:0;
+      background:#ff5b5b;
+      color:white;
+      padding:8px 14px;
+      border-bottom-left-radius:16px;
+      font-size:13px;
+    }
+
+    .emoji{
+      font-size:30px;
+    }
+
+    h2{
+      margin-top:10px;
+      font-size:20px;
+    }
+
+    p{
+      margin:10px 0 18px 0;
+      font-size:14px;
+    }
+
+    .btn{
+      display:inline-block;
+      background:#2980b9;
+      color:white;
+      padding:8px 16px;
+      border-radius:25px;
+      font-size:13px;
+      text-decoration:none;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#1f6391;
+      letter-spacing:0.5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1 class="title">🌟 Exclusive Travel Offers</h1>
+
+    <div class="offers">
+
+      <!-- Summer Sale -->
+      <div class="card">
+        <span class="badge">Hot Deal</span>
+        <div class="emoji">🔥</div>
+        <h2>Summer Sale</h2>
+        <p>Up to <b>30% off</b> on Goa & Kerala packages</p>
+        <a href="#" class="btn">Grab Deal</a>
+      </div>
+
+      <!-- Family Special -->
+      <div class="card">
+        <span class="badge">Best for Families</span>
+        <div class="emoji">👨‍👩‍👧</div>
+        <h2>Family Special</h2>
+        <p>Kids stay <b>free</b> on selected tours</p>
+        <a href="#" class="btn">View Offer</a>
+      </div>
+
+      <!-- Honeymoon Deal -->
+      <div class="card">
+        <span class="badge">Romantic</span>
+        <div class="emoji">💑</div>
+        <h2>Honeymoon Deal</h2>
+        <p>Romantic packages with candlelight dinners</p>
+        <a href="#" class="btn">Book Now</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

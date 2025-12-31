@@ -1,0 +1,821 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel India</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ---------- GLOBAL SMOOTHNESS ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  animation: fadeInBody 0.8s ease-in-out;
+}
+
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+nav a:hover {
+  color: #ff5722;
+  border-bottom: 2px solid #ff5722;
+  padding-bottom: 4px;
+}
+
+/* ---------- HERO ANIMATION ---------- */
+.hero h1 {
+  animation: slideDown 1s ease forwards;
+}
+
+.hero p {
+  animation: slideUp 1.2s ease forwards;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ---------- BUTTON EFFECT ---------- */
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ---------- CARD HOVER ---------- */
+.card,
+.feature,
+.testimonial {
+  transition: all 0.35s ease;
+}
+
+.card:hover,
+.feature:hover,
+.testimonial:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* ---------- TRANSPORT CARDS ---------- */
+#transport div > div {
+  transition: all 0.35s ease;
+}
+
+#transport div > div:hover {
+  transform: translateY(-10px) scale(1.03);
+  background: #ffffff;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* ---------- IMAGE ZOOM ---------- */
+.card img {
+  transition: transform 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+/* ---------- SECTION FADE ON SCROLL ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  color: #333;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: #222;
+  color: #fff;
+  padding: 15px 0;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn-login {
+  background: #ff5722;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+  url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 52px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.hero button {
+  background: #ff5722;
+  border: none;
+  padding: 14px 30px;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+/* ---------- SEARCH ---------- */
+.search-box {
+  background: #fff;
+  max-width: 1000px;
+  margin: -60px auto 60px;
+  padding: 25px;
+  border-radius: 12px;
+  display: flex;
+  gap: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.search-box input, .search-box button {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  width: 100%;
+}
+
+.search-box button {
+  background: #ff5722;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* ---------- SECTION ---------- */
+.section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 40px;
+}
+
+.btn-primary {
+  background: #ff5722;
+  border: none;
+  padding: 10px 22px;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #e64a19;
+  transform: translateY(-2px);
+}
+
+
+/* ---------- DESTINATIONS ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-content h3 {
+  margin-bottom: 8px;
+}
+
+.card-content button {
+  margin-top: 15px;
+  background: #ff5722;
+  border: none;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ---------- WHY CHOOSE US ---------- */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  text-align: center;
+}
+
+.feature {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+/* ---------- TESTIMONIALS ---------- */
+.testimonial {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ---------- CTA ---------- */
+.cta {
+  background: linear-gradient(135deg,#ff5722,#ff9800);
+  color: #fff;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.cta h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.cta button {
+  background: #fff;
+  color: #ff5722;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+.explore-title{
+ text-align:center;
+ margin-bottom:20px;
+ font-size:28px;
+ animation:fadeUp .8s ease;
+}
+
+.explore-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:18px;
+}
+
+.explore-card{
+ border-radius:18px;
+ overflow:hidden;
+ position:relative;
+ cursor:pointer;
+ box-shadow:0 15px 35px rgba(0,0,0,.18);
+ background:white;
+ transform:translateY(30px);
+ opacity:0;
+ animation:riseIn .8s forwards;
+}
+
+.explore-card:nth-child(2){animation-delay:.1s}
+.explore-card:nth-child(3){animation-delay:.2s}
+.explore-card:nth-child(4){animation-delay:.3s}
+
+.explore-card img{
+ width:100%;
+ height:200px;
+ object-fit:cover;
+ transition:.5s;
+}
+
+.explore-card:hover img{
+ transform:scale(1.09);
+ filter:brightness(.85);
+}
+
+.explore-name{
+ padding:12px;
+ font-weight:600;
+ text-align:center;
+ background:linear-gradient(135deg,#ffffff,#f6f6ff);
+}
+
+.explore-card:hover{
+ transform:translateY(-8px) scale(1.02);
+ transition:.4s;
+}
+
+/* floating glow effect */
+.explore-card::after{
+ content:'';
+ position:absolute;
+ inset:0;
+ background:linear-gradient(120deg,transparent,rgba(255,255,255,.3),transparent);
+ opacity:0;
+}
+.explore-card:hover::after{
+ opacity:1;
+ transition:.5s;
+}
+
+/* entry animation */
+@keyframes riseIn{
+ from{opacity:0;transform:translateY(40px)}
+ to{opacity:1;transform:translateY(0)}
+}
+
+/* Back to Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+#backToTop:hover {
+  background: #e64a19;
+}
+
+</style>
+</head>
+<script>
+  function bookTransport(type) {
+    // Redirect to booking page with transport type
+    window.location.href = "transport-booking.html?type=" + encodeURIComponent(type);
+  }
+</script>
+
+<script>
+  const reveals = document.querySelectorAll(".section, #transport, #packages");
+
+  window.addEventListener("scroll", () => {
+    reveals.forEach(section => {
+      const top = section.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (top < windowHeight - 100) {
+        section.classList.add("active");
+        section.classList.add("reveal");
+      }
+    });
+  });
+</script>
+
+<script>
+function searchDestination() {
+  const value = document.getElementById("searchInput").value.toLowerCase();
+
+  if (!value) {
+    alert("Please enter a destination name");
+    return;
+  }
+
+  const destinations = {
+  goa: "goa",
+  kashmir: "kashmir",
+  kerala: "kerala",
+  rajasthan: "rajasthan",
+  manali: "manali",
+  ladakh: "ladakh",
+  shimla: "shimla",
+  ooty: "ooty",
+
+  // 🔥 Hidden destinations (search-only)
+  andaman: "andaman",
+  darjeeling: "darjeeling",
+  gangtok: "gangtok",
+  jaipur: "jaipur",
+  udaipur: "udaipur",
+  agra: "agra",
+  varanasi: "varanasi",
+  matheran: "matheran",
+  lonavala: "lonavala",
+  mysore: "mysore",
+  coorg: "coorg",
+  rishikesh: "rishikesh",
+  haridwar: "haridwar",
+  meghalaya: "meghalaya",
+  lakshadweep: "lakshadweep"
+  };
+
+  for (let key in destinations) {
+    if (value.includes(key)) {
+      window.location.href = "package-details.html?package=" + destinations[key];
+      return;
+    }
+  }
+
+  alert("Destination not found");
+}
+
+// enable Enter key
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("searchInput").addEventListener("keyup", function (e) {
+    if (e.key === "Enter") {
+      searchDestination();
+    }
+  });
+});
+</script>
+
+
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">Travel<span style="color:#ff5722">India</span></div>
+    <nav>
+  <a href="index.html">Home</a>
+  <a href="#destinations">Destinations</a>
+  <a href="#offers">Offers</a>
+  <a href="#contact">Contact</a>
+  <a href="user_bookings.php">Records</a>
+</nav>
+
+    <button class="btn-login" onclick="window.location.href='logout.php'">Logout</button>
+
+  </div>
+</header>
+
+<section class="hero" id="home">
+    <div class="container hero-content">
+        <h1>Discover Your Next Adventure</h1>
+        <p>Explore the best deals on flights, hotels & holiday packages across the globe.</p>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Where to?" />
+            <input type="date" />
+            <input type="number" placeholder="Travellers" />
+            <button onclick="searchDestination()">Search</button>
+
+        </div>
+    </div>
+</section>
+<section id="transport" style="padding:60px 0; background:#fff;">
+  <div style="max-width:1100px; margin:auto; text-align:center;">
+    
+    <h2 style="font-size:32px; margin-bottom:15px;">Transport Services</h2>
+    <p style="font-size:18px; color:#555; margin-bottom:40px;">
+      Comfortable & reliable transport options for a hassle-free journey
+    </p>
+
+    <div style="display:flex; flex-wrap:wrap; gap:25px; justify-content:center;">
+<!-- Bus -->
+<div style="width:260px; background:#f7f7f7; padding:25px; border-radius:12px;">
+  <h3>🚌 AC Bus</h3>
+  <p>Comfortable AC buses for group travel and long routes.</p>
+  <button class="btn-primary"
+    onclick="bookTransport('AC Bus')">Book Now</button>
+</div>
+
+<!-- Cab -->
+<div style="width:260px; background:#f7f7f7; padding:25px; border-radius:12px;">
+  <h3>🚗 Private Cab</h3>
+  <p>Safe and convenient private cabs for local sightseeing.</p>
+  <button class="btn-primary"
+    onclick="bookTransport('Private Cab')">Book Now</button>
+</div>
+
+<!-- Train -->
+<div style="width:260px; background:#f7f7f7; padding:25px; border-radius:12px;">
+  <h3>🚆 Train Booking</h3>
+  <p>Assistance with train reservations & route planning.</p>
+  <button class="btn-primary"
+    onclick="bookTransport('Train')">Book Now</button>
+</div>
+
+<!-- Flight -->
+<div style="width:260px; background:#f7f7f7; padding:25px; border-radius:12px;">
+  <h3>✈️ Flight Booking</h3>
+  <p>Best deals on domestic flights with flexible timings.</p>
+  <button class="btn-primary"
+    onclick="bookTransport('Flight')">Book Now</button>
+</div>
+
+    </div>
+  </div>    
+</section>
+
+<script>
+function bookTransport(type) {
+  // Redirect to transport-booking.php and pass the type in URL
+  window.location.href = "transport-booking.php?type=" + encodeURIComponent(type);
+}
+</script>
+
+
+
+    <section id="packages" style="padding:50px 0; background:#f7f7f7;">
+  <div style="max-width:1100px; margin:auto; text-align:center;">
+    <h2 style="font-size:32px; margin-bottom:20px;">India Tour Packages</h2>
+    <p style="font-size:18px; margin-bottom:40px;">Explore the best destinations across India with our curated travel packages.</p>
+
+    <div style="display:flex; flex-wrap:wrap; gap:25px; justify-content:center;">
+
+      <!-- Goa Package -->
+      <div style="width:300px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+        <img src="https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2022/10/20124558/Kakolem-Beach-Goa-809x455.jpg" style="width:100%;" alt="Goa">
+        <div style="padding:20px;">
+          <h3>Goa Beach Getaway</h3>
+          <p>3 Nights / 4 Days</p>
+          <p>₹12,999 per person</p>
+          <button onclick="window.location.href='package-details.html?package=goa'" style="padding:10px 20px; background:#ff5722; border:none; color:#fff; border-radius:5px; cursor:pointer;">View Details</button>
+        </div>
+      </div>
+
+      <!-- Kashmir Package -->
+      <div style="width:300px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+        <img src="https://cdn.tripspoint.com/uploads/photos/2125/kashmir-the-paradise-on-earth-tour_xIQNJ.jpeg" style="width:100%;" alt="Kashmir">
+        <div style="padding:20px;">
+          <h3>Kashmir Paradise Tour</h3>
+          <p>5 Nights / 6 Days</p>
+          <p>₹18,999 per person</p>
+          <button onclick="window.location.href='package-details.html?package=kashmir'" style="padding:10px 20px; background:#ff5722; border:none; color:#fff; border-radius:5px; cursor:pointer;">View Details</button>
+        </div>
+      </div>
+
+      <!-- Kerala Package -->
+      <div style="width:300px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+        <img src="https://www.exotique.in/wp-content/uploads/2013/12/kerala-backwater.jpg" style="width:100%;" alt="Kerala">
+        <div style="padding:20px;">
+          <h3>Kerala Backwater Tour</h3>
+          <p>4 Nights / 5 Days</p>
+          <p>₹16,499 per person</p>
+          <button onclick="window.location.href='package-details.html?package=kerala'" style="padding:10px 20px; background:#ff5722; border:none; color:#fff; border-radius:5px; cursor:pointer;">View Details</button>
+        </div>
+      </div>
+
+      <!-- Rajasthan Package -->
+      <div style="width:300px; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+        <img src="https://www.kapilindiatours.com/TourPackage/royal-rajasthan-tour.jpg" style="width:100%;" alt="Rajasthan">
+        <div style="padding:20px;">
+          <h3>Royal Rajasthan Tour</h3>
+          <p>6 Nights / 7 Days</p>
+          <p>₹22,999 per person</p>
+          <button onclick="window.location.href='package-details.html?package=rajasthan'" style="padding:10px 20px; background:#ff5722; border:none; color:#fff; border-radius:5px; cursor:pointer;">View Details</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section id="explore-more" class="section explore-section">
+  <h2 class="explore-title">✨ Explore More Destinations</h2>
+
+  <div class="explore-grid">
+
+    <div class="explore-card" onclick="openPackage('manali')">
+      <img src="https://pushpendragautam.in/Images%20for%20Posts/2017/Jan/Solong%20Manali/snowfall-in-himachal-pradesh-india-pics-manali-snowfall-pics-best-travel-blogger-india-4.jpg">
+      <div class="explore-name">Manali</div>
+    </div>
+
+    <div class="explore-card" onclick="openPackage('ladakh')">
+      <img src="https://cdn.audleytravel.com/3868/2761/79/1016845-leh-monastry-ladakh-india.jpg">
+      <div class="explore-name">Ladakh</div>
+    </div>
+
+    <div class="explore-card" onclick="openPackage('shimla')">
+      <img src="https://www.clubmahindra.com/blog/media/section_images/shuttersto-026b0fa609daf35.jpg">
+      <div class="explore-name">Shimla</div>
+    </div>
+
+    <div class="explore-card" onclick="openPackage('ooty')">
+      <img src="https://experiencekerala.in/kerala-tourism-blog/wp-content/uploads/2020/03/13-25-960x576.jpg">
+      <div class="explore-name">Ooty</div>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="destinations" class="section">
+  <h2 class="section-title">Popular Destinations</h2>
+
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+      <div class="card-content">
+        <h3>Goa</h3>
+        <p>Beaches • Nightlife • Adventure</p>
+        <button onclick="window.location.href='package-details.html?package=goa'">Explore</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://honeymoonbug.com/blog/wp-content/uploads/2017/07/sonamarg1-min.jpg">
+      <div class="card-content">
+        <h3>Kashmir</h3>
+        <p>Snow • Mountains • Serenity</p>
+        <button onclick="window.location.href='package-details.html?package=kashmir'">Explore</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://irisholidays.com/keralatourism/wp-content/uploads/2017/02/kerala-images-photos.jpg">
+      <div class="card-content">
+        <h3>Kerala</h3>
+        <p>Backwaters • Nature • Calm</p>
+        <button onclick="window.location.href='package-details.html?package=kerala'">Explore</button>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="offers" style="padding:60px 0; background:#ffffff;">
+  <div style="max-width:1100px; margin:auto; text-align:center;">
+
+    <h2 style="font-size:32px; margin-bottom:10px;">Exclusive Offers 🔥</h2>
+    <p style="font-size:18px; margin-bottom:35px;">Grab the best travel discounts before they’re gone!</p>
+
+    <div style="display:flex; flex-wrap:wrap; gap:25px; justify-content:center;">
+
+      <!-- Summer Sale -->
+      <div style="width:300px; background:#fff; border-radius:12px; padding:25px; box-shadow:0 5px 18px rgba(0,0,0,0.1);">
+        <h3>🔥 Summer Sale</h3>
+        <p>Up to <b>30% OFF</b> on Goa & Kerala packages</p>
+        <button onclick="window.location.href='summer-sale.html'" style="padding:10px 20px; background:#ff5722; border:none; color:#fff; border-radius:6px; cursor:pointer;">Grab Deal</button>
+      </div>
+
+      <!-- Family Special -->
+      <div style="width:300px; background:#fff; border-radius:12px; padding:25px; box-shadow:0 5px 18px rgba(0,0,0,0.1);">
+        <h3>👨‍👩‍👧 Family Special</h3>
+        <p>Kids stay <b>FREE</b> on selected tours</p>
+        <button onclick="window.location.href='family-special.html'" style="padding:10px 20px; background:#ff5722; border:none; color:#fff; border-radius:6px; cursor:pointer;">View Offer</button>
+      </div>
+
+      <!-- Honeymoon Deal -->
+      <div style="width:300px; background:#fff; border-radius:12px; padding:25px; box-shadow:0 5px 18px rgba(0,0,0,0.1);">
+        <h3>💑 Honeymoon Deal</h3>
+        <p>Romantic packages with candlelight dinners</p>
+        <button onclick="window.location.href='honeymoon-deal.html'" style="padding:10px 20px; background:#ff5722; border:none; color:#fff; border-radius:6px; cursor:pointer;">Book Now</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2 class="section-title">Contact Us</h2>
+
+  <div class="grid">
+    <div class="feature">
+      <h3>📍 Office</h3>
+      <p>Mumbai, India</p>
+    </div>
+
+    <div class="feature">
+      <h3>📞 Phone</h3>
+      <p>+91 98765 43210</p>
+    </div>
+
+    <div class="feature">
+      <h3>✉️ Email</h3>
+      <p>support@travelindia.com</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- WHY CHOOSE US -->
+<section class="section">
+  <h2 class="section-title">Why Choose Us</h2>
+  <div class="features">
+    <div class="feature">✔ Best Price Guarantee</div>
+    <div class="feature">✔ Expert Tour Guides</div>
+    <div class="feature">✔ 24/7 Customer Support</div>
+    <div class="feature">✔ Trusted by Thousands</div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <h2 class="section-title">What Our Customers Say</h2>
+  <div class="grid">
+    <div class="testimonial">“Amazing service & unforgettable trip!” – Rahul</div>
+    <div class="testimonial">“Best travel experience ever.” – Ayesha</div>
+    <div class="testimonial">“Highly recommended for family tours.” – Aman</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Ready to Start Your Journey?</h2>
+  <p>Book your dream vacation today</p>
+  <button>Book Now</button>
+</section>
+
+<footer>
+  © 2025 Travel India. All Rights Reserved.
+</footer>
+
+<button id="backToTop" title="Back to Top">↑</button>
+
+<script>
+// Back to Top Button
+const backToTopBtn = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 300) {
+    backToTopBtn.style.display = 'block';
+  } else {
+    backToTopBtn.style.display = 'none';
+  }
+});
+
+backToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Family Special – Kids Stay Free</title>
+
+<style>
+*{font-family:Poppins,sans-serif}
+body{background:#eef2f7;margin:0}
+.container{max-width:1100px;margin:auto;padding:20px}
+.banner{width:100%;height:360px;object-fit:cover;border-radius:14px;animation:fade 1s}
+
+.box{
+  background:white;padding:25px;border-radius:14px;
+  margin-top:20px;box-shadow:0 10px 30px rgba(0,0,0,.1);
+  animation:slideUp 1s
+}
+
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:15px}
+.gallery img{height:180px;width:100%;object-fit:cover;border-radius:14px;transition:.4s}
+.gallery img:hover{transform:scale(1.07)}
+
+button{background:#ff5722;color:white;border:none;padding:12px 20px;border-radius:9px;cursor:pointer;transition:.3s}
+button:hover{transform:translateY(-3px)}
+
+.badge{background:#4caf50;color:white;padding:6px 10px;border-radius:8px}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="https://img.freepik.com/free-photo/happy-family-traveling-car_23-2148218812.jpg" class="banner">
+
+<div class="box">
+
+<span class="badge">Family Favourite 💚</span>
+
+<h1>👨‍👩‍👧 Family Special – Kids Stay FREE</h1>
+
+<p>Make memories with your little ones without worrying about extra hotel charges.</p>
+
+<h2>🎁 Benefits</h2>
+<ul>
+<li>Kids below 10 stay <b>absolutely free</b></li>
+<li>Complimentary breakfast</li>
+<li>Family sightseeing tours</li>
+<li>Spacious family rooms</li>
+<li>Theme park voucher discounts</li>
+</ul>
+
+<h2>🖼️ Family Moments</h2>
+
+<div class="gallery">
+<img src="https://findingbeyond.com/app/uploads/2019/07/family-destination-cover.jpg">
+<img src="https://www.minitime.com/wp-content/uploads/2021/01/5-Best-AllInclusive-Resorts-for-Families-in-the-Caribbean-0e1f3d3af4914a20a614d2b4458a5d66.jpg">
+<img src="https://roobytalk.com/wp-content/uploads/2023/02/Top-Family-Travel-Destinations-for-a-Memorable-Vacation.jpg">
+<img src="https://bridgesandballoons.com/Images/2023/01/DSC_8476-1536x1152.jpg">
+</div>
+
+<br>
+
+<button onclick="history.back()">⬅ Go Back</button>
+<button onclick="alert('We will contact you soon!')">📞 Enquiry</button>
+
+</div>
+</div>
+
+</body>
+</html>

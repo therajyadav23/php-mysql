@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Honeymoon Romantic Package</title>
+
+<style>
+*{font-family:Poppins,sans-serif}
+body{background:#fff1f4;margin:0}
+.container{max-width:1100px;margin:auto;padding:20px}
+
+.banner{
+  width:100%;height:360px;object-fit:cover;
+  border-radius:14px;animation:fade 1s
+}
+
+.box{
+  background:white;padding:25px;border-radius:14px;
+  margin-top:20px;box-shadow:0 10px 30px rgba(0,0,0,.1);
+  animation:slideUp 1s
+}
+
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:15px}
+.gallery img{height:180px;width:100%;object-fit:cover;border-radius:14px;transition:.4s}
+.gallery img:hover{transform:scale(1.07)}
+
+button{background:#ff5722;color:white;border:none;padding:12px 20px;border-radius:9px;cursor:pointer;transition:.3s}
+button:hover{transform:translateY(-3px)}
+
+.badge{background:#ff5722;color:white;padding:6px 10px;border-radius:8px}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="https://img.freepik.com/free-photo/romantic-couple-beach_23-2147792360.jpg" class="banner">
+
+<div class="box">
+
+<span class="badge">Most Loved 💕</span>
+
+<h1>💑 Honeymoon Romantic Deal</h1>
+
+<p>Celebrate love with candlelight dinners and breathtaking destinations.</p>
+
+<h2>🌹 Includes</h2>
+<ul>
+<li>Candlelight dinner</li>
+<li>Flower bed decoration</li>
+<li>Honeymoon cake</li>
+<li>Private cab sightseeing</li>
+<li>Luxury resort suite</li>
+</ul>
+
+<h2>🖼️ Romantic Gallery</h2>
+
+<div class="gallery">
+<img src="https://outpostgeographic.com/wp-content/uploads/2021/11/delhi-to-maldives-honeymoon-packages-all-inclusive-price-1200x800-2.jpg">
+<img src="https://experfly.co.uk/wp-content/uploads/2016/01/Thailand-Honeymoon-Banyan-tree.jpg">
+<img src="https://www.africaodyssey.com/site/odyssey-image-proxy/lodges/waterlovers-beach-resort=404969-380.jpg">
+<img src="https://www.sandals.com/blog/content/images/2020/04/Sandals-South-Coast-Over-Water-Bungalows-Aerial-Front.jpg">
+</div>
+
+<br>
+
+<button onclick="history.back()">⬅ Go Back</button>
+<form action="send_enquiry.php" method="post" style="display:inline;">
+  <input type="hidden" name="message" id="enquiry_msg" value="">
+  <button type="button" onclick="showEnquiryPrompt()">💌 Send Enquiry</button>
+</form>
+
+<script>
+function showEnquiryPrompt() {
+  let msg = prompt("Enter your enquiry message:");
+  if (msg && msg.trim().length > 0) {
+    document.getElementById("enquiry_msg").value = msg.trim();
+    document.forms[0].submit();
+  }
+}
+</script>
+
+</div>
+</div>
+
+</body>
+</html>

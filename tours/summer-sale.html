@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Summer Sale – Goa & Kerala Offer</title>
+
+<style>
+*{font-family:Poppins,sans-serif;box-sizing:border-box;}
+body{background:#f4f7fb;margin:0}
+.container{max-width:1100px;margin:auto;padding:20px}
+
+/* banner */
+.banner{
+  width:100%;height:380px;object-fit:cover;
+  border-radius:14px;
+  animation:fade 1s ease-in-out;
+}
+
+/* animated box */
+.box{
+  background:#fff;padding:25px;margin-top:20px;
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
+  animation:slideUp 1s ease;
+}
+
+/* keyframes */
+@keyframes slideUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes fade{
+  from{opacity:0} to{opacity:1}
+}
+
+/* gallery */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:15px;margin-top:15px
+}
+.gallery img{
+  width:100%;height:180px;object-fit:cover;
+  border-radius:14px;
+  transition:.4s;
+}
+.gallery img:hover{
+  transform:scale(1.06);
+  box-shadow:0 15px 30px rgba(0,0,0,.25);
+}
+
+/* price card */
+.price{
+  background:#ff5722;color:white;padding:12px;
+  border-radius:10px;display:inline-block;
+  margin:10px 0;font-weight:600;
+  animation:pulse 1.5s infinite;
+}
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.05)}
+  100%{transform:scale(1)}
+}
+
+/* buttons */
+button{
+  background:#ff5722;color:white;border:none;
+  padding:12px 20px;border-radius:8px;
+  cursor:pointer;font-size:15px;
+  transition:.3s
+}
+button:hover{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 10px 25px rgba(0,0,0,.2)
+}
+
+/* badge */
+.tag{
+  background:#ff9800;color:white;
+  padding:6px 10px;border-radius:8px
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="banner">
+
+<div class="box">
+
+<span class="tag">Limited Time Offer ⏳</span>
+
+<h1>🔥 Summer Sale – Goa & Kerala</h1>
+
+<div class="price">UP TO 30% OFF</div>
+
+<p>Enjoy the **coolest summer discounts** on India’s most loved destinations.</p>
+
+<h2>📌 Package Highlights</h2>
+<ul>
+<li>3N/4D Goa Beach Package</li>
+<li>4N/5D Kerala Backwater Houseboat Stay</li>
+<li>Daily breakfast included</li>
+<li>Airport pick-up & drop</li>
+<li>Guided sightseeing</li>
+<li>Comfort AC transport</li>
+</ul>
+
+<h2>❌ Not Included</h2>
+<ul>
+<li>Personal expenses</li>
+<li>Extra adventure activities</li>
+<li>Flight tickets (optional add-on available)</li>
+</ul>
+
+<h2>🖼️ Destination Images</h2>
+
+<div class="gallery">
+<img src="https://irisholidays.com/keralatourism/wp-content/uploads/2017/02/kerala-images-photos.jpg">
+<img src="https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2022/10/20124558/Kakolem-Beach-Goa-809x455.jpg">
+<img src="https://www.exotique.in/wp-content/uploads/2013/12/kerala-backwater.jpg">
+<img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0">
+</div>
+
+<br>
+
+<button onclick="history.back()">⬅ Go Back</button>
+<button onclick="alert('We will contact you soon!')">📞 Enquiry</button>
+
+</div>
+</div>
+
+</body>
+</html>

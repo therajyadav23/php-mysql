@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Package Details | TravelIndia</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#eef3ff;color:#222;}
+
+/* HEADER */
+header{
+ position:fixed;top:0;width:100%;z-index:1000;
+ background:rgba(255,255,255,.85);
+ backdrop-filter:blur(10px);
+ box-shadow:0 8px 25px rgba(0,0,0,.08)
+}
+.header{
+ max-width:1200px;margin:auto;
+ display:flex;justify-content:space-between;align-items:center;
+ padding:14px 22px;
+}
+.logo{font-size:26px;font-weight:600}
+.back-btn{
+ background:linear-gradient(135deg,#ff5b2e,#ff7c4d);
+ color:#fff;text-decoration:none;padding:10px 22px;
+ border-radius:30px;
+}
+
+/* HERO */
+.hero{
+ height:80vh;
+ background-size:cover;background-position:center;
+ display:flex;align-items:flex-end;justify-content:flex-start;
+ padding:70px;
+ position:relative;
+}
+.hero::after{
+ content:'';position:absolute;inset:0;
+ background:linear-gradient(to top,rgba(0,0,0,.8),rgba(0,0,0,.25),transparent);
+}
+.hero-content{
+ position:relative;z-index:2;color:white;
+ animation:fadeUp 1.2s ease;
+}
+.hero h1{font-size:48px}
+
+/* CONTAINER */
+.container{max-width:1150px;margin:110px auto 70px;padding:0 20px}
+
+/* RIBBON */
+.ribbon{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:18px;margin-top:-60px
+}
+.ribbon-card{
+ background:white;padding:22px;border-radius:20px;
+ text-align:center;
+ box-shadow:0 15px 35px rgba(0,0,0,.1);
+ transform:translateY(25px);
+ opacity:0;animation:rise .8s forwards;
+}
+.ribbon-card:nth-child(2){animation-delay:.1s}
+.ribbon-card:nth-child(3){animation-delay:.2s}
+.ribbon-card:nth-child(4){animation-delay:.3s}
+
+/* SECTIONS */
+.section{margin-top:70px}
+.section-title{font-size:26px;margin-bottom:18px;font-weight:600}
+
+/* STORY */
+.story-box{display:flex;gap:16px;flex-wrap:wrap}
+.story-img{
+ width:310px;height:220px;border-radius:18px;
+ object-fit:cover;
+ box-shadow:0 15px 35px rgba(0,0,0,.18)
+}
+
+/* FEELINGS */
+.feelings{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+ gap:16px;margin-top:12px
+}
+.feel{
+ background:white;padding:18px;border-radius:16px;
+ box-shadow:0 10px 25px rgba(0,0,0,.1);
+ transition:.35s;
+}
+.feel:hover{transform:translateY(-6px) scale(1.02)}
+
+/* ITINERARY */
+.day-card{
+ background:white;display:flex;gap:16px;
+ padding:14px;border-radius:18px;
+ box-shadow:0 12px 25px rgba(0,0,0,.12);
+ margin-bottom:12px;
+}
+.day-img{width:120px;height:90px;border-radius:14px;object-fit:cover}
+.day-title{color:#0a5cff;font-weight:600}
+
+/* GALLERY */
+.gallery{display:flex;gap:14px;overflow-x:auto}
+.gallery img{
+ min-width:300px;height:210px;border-radius:20px;
+ object-fit:cover;
+ box-shadow:0 15px 30px rgba(0,0,0,.18);
+ transition:.5s;
+}
+.gallery img:hover{transform:scale(1.08)}
+
+/* BOOK BAR */
+.book-bar{
+ position:fixed;bottom:16px;left:50%;
+ transform:translateX(-50%);
+ display:flex;gap:14px;align-items:center;
+ background:white;
+ padding:10px 16px;border-radius:20px;
+ box-shadow:0 10px 25px rgba(0,0,0,.25)
+}
+.book-bar button{
+ background:#ff5b2e;border:none;color:#fff;
+ padding:8px 14px;border-radius:14px;
+ cursor:pointer
+}
+
+/* BOOKING POPUP */
+.booking-overlay{
+ position:fixed;inset:0;
+ background:rgba(0,0,0,.65);
+ display:none;justify-content:center;align-items:center;
+ z-index:3000;
+}
+.booking-box{
+ background:white;
+ padding:26px;
+ border-radius:22px;
+ width:95%;max-width:520px;
+ position:relative;
+ box-shadow:0 25px 55px rgba(0,0,0,.25);
+ animation:fadeUp .5s ease;
+}
+.booking-box h2{margin-bottom:4px;font-size:22px}
+.booking-box .sub{opacity:.8;margin-bottom:14px}
+.close-btn{
+ position:absolute;right:18px;top:12px;
+ cursor:pointer;font-size:18px;
+}
+.form-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+ gap:12px;
+}
+.field input,.field textarea{
+ width:100%;padding:9px 10px;margin-top:4px;
+ border-radius:12px;border:1px solid #ddd;outline:none
+}
+.submit-btn{
+ width:100%;margin-top:12px;
+ background:linear-gradient(135deg,#ff5b2e,#ff7c4d);
+ color:white;border:none;padding:10px 0;
+ border-radius:14px;font-size:15px;cursor:pointer
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+@keyframes rise{to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="header">
+   <div class="logo">Travel<span style="color:#ff5722">India</span></div>
+   <a href="index.html" class="back-btn">← Back</a>
+ </div>
+</header>
+
+<div class="hero" id="hero">
+ <div class="hero-content">
+   <h1 id="title"></h1>
+   <p id="tagline"></p>
+ </div>
+</div>
+
+<div class="container">
+
+ <div class="ribbon">
+   <div class="ribbon-card"><h4>Duration</h4><p id="duration"></p></div>
+   <div class="ribbon-card"><h4>Price</h4><p id="price"></p></div>
+   <div class="ribbon-card"><h4>Group</h4><p id="group"></p></div>
+   <div class="ribbon-card"><h4>Transport</h4><p id="transport"></p></div>
+ </div>
+
+ <div class="section">
+   <h2 class="section-title">A Journey Designed for You</h2>
+   <div class="story-box">
+     <img id="storyImg" class="story-img">
+     <p id="story" class="story"></p>
+   </div>
+ </div>
+
+ <div class="section">
+   <h2 class="section-title">What You’ll Feel</h2>
+   <div id="feelings" class="feelings"></div>
+ </div>
+
+ <div class="section">
+   <h2 class="section-title">Itinerary</h2>
+   <div id="journey"></div>
+ </div>
+
+ <div class="section">
+   <h2 class="section-title">Gallery</h2>
+   <div id="gallery" class="gallery"></div>
+ </div>
+
+ <div class="book-bar">
+   <span id="priceBar" class="book-price"></span>
+   <button id="reserveBtn">Reserve</button>
+ </div>
+
+</div>
+
+<!-- BOOKING POPUP -->
+<div id="bookingPopup" class="booking-overlay">
+
+  <div class="booking-box">
+
+    <h2>Trip Reservation</h2>
+    <p class="sub">Fill your details to continue booking</p>
+
+    <span id="closePopup" class="close-btn">✕</span>
+
+    <form id="bookingForm" action="save_reservation.php" method="post">
+
+      <!-- Package name hidden field (so PHP knows which package) -->
+      <input type="hidden" name="package_name" id="package_name" value="">
+
+      <div class="form-grid">
+
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input id="name" name="full_name" type="text" required>
+        </div>
+
+        <div class="field">
+          <label for="phone">Mobile Number</label>
+          <input id="phone" name="phone" type="tel" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+
+        <div class="field">
+          <label for="trav">No. of Travelers</label>
+          <input id="trav" name="travelers" type="number" min="1" required>
+        </div>
+         
+        <div class="field">
+          <label for="date">Travel Date</label>
+          <input id="date" name="travel_date" type="date" required>
+        </div>
+
+      </div>
+
+      <div class="field full">
+        <label for="msg">Additional Message</label>
+        <textarea id="msg" name="message" rows="3" placeholder="Any preference, hotel type, pickup city etc."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Confirm Reservation</button>
+
+    </form>
+
+  </div>
+
+</div>
+
+<script>
+  /* ================= DATA FOR ALL PACKAGES ================= */
+document.addEventListener("DOMContentLoaded",()=>{
+const data = {
+  goa:{
+title:"Goa Beach Getaway",
+banner:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&w=1200&q=60",
+storyImg:"https://images.unsplash.com/photo-1534854638093-bada1813ca19?auto=format&w=800&q=60",
+tagline:"Slow mornings. Salty breeze. Music-filled nights.",
+duration:"3 Nights / 4 Days",
+price:"₹12,999",
+group:"Up to 10 people",
+transport:"AC Coach",
+story:"This journey is for the soul that loves waves, sunsets and laughter.",
+feelings:["Golden sunrise","Sea breeze","Live music","Beach walk"],
+itineraryImg:[
+"https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&w=800&q=60",
+"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&w=800&q=60",
+"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&w=800&q=60",
+"https://images.unsplash.com/photo-1605365070782-308c50a6481d?auto=format&w=800&q=60"
+],
+itinerary:["Arrival","North Goa","South Goa","Departure"],
+gallery:[
+"https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&w=1200&q=60",
+"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&w=1200&q=60",
+"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&w=1200&q=60"
+]
+},
+
+kashmir:{
+title:"Kashmir Paradise",
+banner:"https://cdn.tripspoint.com/uploads/photos/2125/kashmir-the-paradise-on-earth-tour_ZgcZw.jpeg",
+storyImg:"https://images.travelandleisureasia.com/wp-content/uploads/sites/3/2024/01/15134114/kashmir-deepanshu-nayak-1600x900.jpeg",
+tagline:"Where mountains whisper peace.",
+duration:"5 Nights / 6 Days",
+price:"₹18,999",
+group:"Up to 8 people",
+transport:"Flight + AC Coach",
+story:"Snow valleys, silent lakes and peace that hugs you softly.",
+feelings:["Snow","Shikara ride","Hot tea","Pine forests"],
+itineraryImg:[
+"https://dynamic.tourtravelworld.com/package-images/photo-big/dir_19/549488/284019.jpg",
+"https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2024/01/11201526/Gulmarg-Deepanshu-Nayak.jpg",
+"https://triconholidays.com/wp-content/uploads/2025/02/unnamed-5-1-1024x536.webp",
+"https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2021/12/Sonamarg-Kashmir3.jpg?resize=800%2C555&ssl=1",
+"https://kashmirtickets.com/wp-content/uploads/2023/03/betaab.jpg",
+"https://as1.ftcdn.net/v2/jpg/01/32/98/94/1000_F_132989493_TzwhXCvLFaOYZNZISFFznuhwy5rK3jgM.jpg",
+],
+itinerary:["Srinagar","Gulmarg","Pahalgam","Sonamarg","Betaab Valley","Shalimar Bagh"],
+gallery:[
+"https://dynamic.tourtravelworld.com/package-images/photo-big/dir_19/549488/284019.jpg",
+"https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2024/01/11201526/Gulmarg-Deepanshu-Nayak.jpg",
+"https://triconholidays.com/wp-content/uploads/2025/02/unnamed-5-1-1024x536.webp",
+"https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2021/12/Sonamarg-Kashmir3.jpg?resize=800%2C555&ssl=1",
+"https://kashmirtickets.com/wp-content/uploads/2023/03/betaab.jpg",
+"https://as1.ftcdn.net/v2/jpg/01/32/98/94/1000_F_132989493_TzwhXCvLFaOYZNZISFFznuhwy5rK3jgM.jpg"
+]
+},
+
+kerala:{
+title:"Kerala Backwaters",
+banner:"https://static.toiimg.com/photo/msid-83336319,width-96,height-65.cms",
+storyImg:"https://fthmb.tqn.com/eN8UsgBHlQFlUz-F-EDxRaf1Y5s=/2121x1414/filters:fill(auto,1)/GettyImages-640355133-5947dd743df78c537b39a909.jpg",
+tagline:"Green hills and calm waters.",
+duration:"4 Nights / 5 Days",
+price:"₹15,499",
+group:"Up to 8 people",
+transport:"AC Coach & Houseboat",
+story:"Backwaters, coconut trees, spices and slow mornings.",
+feelings:["Boat stay","Coconut trees","Spices","Tea gardens"],
+itineraryImg:[
+"https://static.wixstatic.com/media/ed75e9_a632f4cd3b5444549d4a4f12be78f530~mv2_d_3119_2079_s_2.jpg/v1/fill/w_2500,h_1666,al_c/ed75e9_a632f4cd3b5444549d4a4f12be78f530~mv2_d_3119_2079_s_2.jpg",
+"https://fthmb.tqn.com/eN8UsgBHlQFlUz-F-EDxRaf1Y5s=/2121x1414/filters:fill(auto,1)/GettyImages-640355133-5947dd743df78c537b39a909.jpg",
+"https://cdn.kimkim.com/files/a/content_articles/featured_photos/3e9b7a92f90fb5be1f313570468d0435ad3c3b33/big-315ad662761703999dee56882b5af002.jpg",
+"https://dynamic.tourtravelworld.com/package-images/photo-big/dir_17/483217/200313.jpg"
+],
+itinerary:["Kochi","Backwaters","Munnar","Return"],
+gallery:[
+"https://kerala.me/wp-content/uploads/2016/01/Alappuzha-backwaters-1.jpg",
+"https://i.assetzen.net/i/huXs1CfIFbS1/w:1920/h:/q:70.jpg",
+"https://cf.bstatic.com/xdata/images/hotel/max1024x768/629024092.jpg?k=1443f01ac141be3616216d49d2a0e95172b72ef745478afa56f173567a3c2561&o=",
+"https://cf.bstatic.com/xdata/images/hotel/max1024x768/687102114.jpg?k=2ab2baf27d5b615634655b1c2090479d70b05fa2aa8ce4074c61e3a00ea62eca&o="
+]
+},
+
+rajasthan:{
+title:"Royal Rajasthan",
+banner:"https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&w=1200&q=60",
+storyImg:"https://miro.medium.com/v2/resize:fit:1400/1*ynWwFcrQLdhZ2LahBP3OFA.jpeg",
+tagline:"Where history breathes royalty.",
+duration:"5 Nights / 6 Days",
+price:"₹16,999",
+group:"Up to 10 people",
+transport:"AC Coach",
+story:"Forts, dunes and stories told by sand.",
+feelings:["Camel safari","Folk music","Forts","Sunsets"],
+itineraryImg:[
+"https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&w=800&q=60",
+"https://www.adventureactivities.co.in/rajasthan/images/royalrajasthancamp.jpg",
+"https://static2.tripoto.com/media/filter/nl/img/10291/TripDocument/p1070879.jpg",
+"https://static2.tripoto.com/media/filter/nl/img/5280/TripDocument/wp_20140331_165.jpg"
+],
+itinerary:["Jaipur","Pushkar","Jodhpur","Jaisalmer"],
+gallery:[
+"https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&w=800&q=60",
+"https://www.adventureactivities.co.in/rajasthan/images/royalrajasthancamp.jpg",
+"https://static2.tripoto.com/media/filter/nl/img/10291/TripDocument/p1070879.jpg",
+"https://static2.tripoto.com/media/filter/nl/img/5280/TripDocument/wp_20140331_165.jpg",
+"https://static.india.com/wp-content/uploads/2022/04/pjimage-2022-04-19T151302.910.jpg",
+"https://s3.ap-southeast-2.amazonaws.com/firstclass.com.au/wp-content/uploads/2020/10/rambagh.jpg"
+]
+},
+manali:{
+title:"Manali Hills Escape",
+banner:"https://www.blog.comfortyourjourney.com/admin/images/banner/1558681260Manali-1.png",
+storyImg:"https://static2.tripoto.com/media/filter/nl/img/1519564/TripDocument/1555691038_20180523_153558.jpg",
+tagline:"Snowy peaks, quiet roads, warm memories",
+duration:"4 Nights / 5 Days",
+price:"₹17,499",
+group:"Up to 8 people",
+transport:"Volvo + Private Cab",
+story:"Manali is where mountains meet clouds and time slows down. A perfect escape for peace seekers and adventure lovers.",
+feelings:["Snowfall","Bonfire","Paragliding","River rafting"],
+itineraryImg:[
+"https://miro.medium.com/v2/resize:fit:1200/1*IcxDiWXolbPTneTO6DKZHg.jpeg",
+"https://sheorantourism.com/wp-content/uploads/2023/11/8052887F-8E8F-4F9D-B3E2-4F793D1DF730.jpg",
+"https://indiathrills.com/wp-content/uploads/2020/02/beas-adventure-camp-1024x768.jpg",
+"https://www.honeymoonpackagesmanali.org/uploads/8/2/6/1/8261259/337595_orig.jpg"
+],
+itinerary:["Arrival & Mall Road","Solang Valley","Rohtang Pass","Local Sightseeing"],
+gallery:[
+"https://miro.medium.com/v2/resize:fit:1200/1*IcxDiWXolbPTneTO6DKZHg.jpeg",
+"https://sheorantourism.com/wp-content/uploads/2023/11/8052887F-8E8F-4F9D-B3E2-4F793D1DF730.jpg",
+"https://indiathrills.com/wp-content/uploads/2020/02/beas-adventure-camp-1024x768.jpg",
+"https://www.honeymoonpackagesmanali.org/uploads/8/2/6/1/8261259/337595_orig.jpg"
+]
+},
+ladakh: {
+    title: "Ladakh Adventure Trail",
+    banner: "https://bhutan.com.au/wp-content/uploads/2023/02/img-markha-valley-1-resized.jpg",
+    storyImg: "https://toliday.in/blog/wp-content/uploads/2024/05/01ampakkpass12.jpg",
+    tagline: "High passes, clear skies, and adventure",
+    duration: "6 Nights / 7 Days",
+    price: "₹24,999",
+    group: "Up to 6 people",
+    transport: "Volvo + Bike Rental",
+    story: "Ladakh is a paradise for adventure seekers, with breathtaking landscapes and thrilling experiences.",
+    feelings: ["Motorbiking","Trekking","Camping","Lake Views"],
+    itineraryImg: [
+        "https://www.indiantempletour.com/wp-content/uploads/2019/01/Leh-Ladakh-Package.webp",
+        "https://navbharattours.com/wp-content/uploads/Pangong-to-Leh.jpg",
+        "https://www.nomadicweekends.com/wp-content/uploads/2019/07/002-1-1244x800.jpg",
+        "https://toliday.in/blog/wp-content/uploads/2024/05/01ampakkpass12.jpg"
+    ],
+    itinerary: ["Arrival & Local Sightseeing","Nubra Valley","Pangong Lake","Monastery Visits"],
+    gallery: [
+        "https://www.tourmyindia.com/socialimg/adventure-tourism-ladakh.jpg",
+        "https://www.indiantempletour.com/wp-content/uploads/2019/01/Leh-Ladakh-Package.webp",
+        "https://navbharattours.com/wp-content/uploads/Pangong-to-Leh.jpg",
+        "https://www.nomadicweekends.com/wp-content/uploads/2019/07/002-1-1244x800.jpg"
+    ]
+},
+jaipur: {
+    title: "Jaipur Royal Retreat",
+    banner: "https://hub.milescop.com/assets/images/941bc812-b1b8-4f09-ae91-618b793bb69d.jpg?width=1200&height=627&format=auto&compression=true",
+    storyImg: "https://admin.hire4event.com/assets/venueimage/Royal_Retreat_Resort_Spa_2.webp",
+    tagline: "Palaces, forts, and royal heritage",
+    duration: "3 Nights / 4 Days",
+    price: "₹11,499",
+    group: "Up to 8 people",
+    transport: "AC Bus + Cab",
+    story: "Discover the royal charm of Jaipur with its majestic forts, colorful markets, and rich culture.",
+    feelings: ["Fort Visit","Palace Tour","Shopping","Cultural Shows"],
+    itineraryImg: [
+        "https://assets-news.housing.com/news/wp-content/uploads/2021/08/17181618/All-about-the-City-Palace-Jaipur-A-classic-symbol-of-different-architectural-styles-FB-1200x700-compressed.jpg",
+        "https://www.tripsavvy.com/thmb/iVN0yWFtZwLwKwSXARuvmNh3U_4=/3311x2216/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-524151419-6d874058218e48e88803c5fca2f6c1d2.jpg",
+        "https://www.tripsavvy.com/thmb/Afl1v6bgmGid9kPfseymDiAYWa0=/3595x2397/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-518387310-04a30994bfb1461bb8000f1864ca1fc5.jpg",
+        "https://static.tripzilla.in/media/260569/conversions/d3b23724-7f31-4e07-b572-bf9859ffdd69-w768.webp"
+    ],
+    itinerary: ["City Palace","Amber Fort","Jantar Mantar","Local Markets"],
+    gallery: [
+        "https://www.royalquestresorts.com/wp-content/uploads/2023/05/banner-02-2.jpg",
+        "https://i.pinimg.com/736x/70/ba/b1/70bab12ae9110243ac3f0e16ba3b6a51--rajasthan-india-palaces.jpg",
+        "https://assets-news.housing.com/news/wp-content/uploads/2021/08/17181618/All-about-the-City-Palace-Jaipur-A-classic-symbol-of-different-architectural-styles-FB-1200x700-compressed.jpg",
+        "https://www.tripsavvy.com/thmb/iVN0yWFtZwLwKwSXARuvmNh3U_4=/3311x2216/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-524151419-6d874058218e48e88803c5fca2f6c1d2.jpg",
+        "https://s3.india.com/wp-content/uploads/2025/02/feature.jpg?impolicy=Medium_Widthonly&w=800&h=541"
+    ]
+},
+
+agra: {
+    title: "Agra Taj Experience",
+    banner: "https://thumbs.dreamstime.com/b/majestic-taj-mahal-timeless-wonder-agra-india-breathtaking-architectural-detail-witness-grandeur-world-renowned-373626200.jpg",
+    storyImg: "https://tajmahalcabs.com/travels/wp-content/uploads/Agra-Taj-Mahal-picture-Travels.jpg",
+    tagline: "Witness the timeless beauty of the Taj Mahal",
+    duration: "2 Nights / 3 Days",
+    price: "₹8,999",
+    group: "Up to 6 people",
+    transport: "AC Bus + Cab",
+    story: "Agra offers a glimpse into Mughal architecture, romantic history, and timeless beauty.",
+    feelings: ["Taj Mahal Visit","Fort Exploration","Photography","Cultural Tours"],
+    itineraryImg: [
+        "https://rishikeshdaytour.com/blog/wp-content/uploads/2024/08/Sunrise-in-Agra-at-the-Taj-Mahal.jpgs",
+        "https://photographytoursinindia.com/wp-content/uploads/2021/04/Agra-fort-2-1-1024x683.jpg",
+        "https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/09/Local-Market-in-Agra.jpg?resize=1200%2C900&ssl=1",
+        "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/75/b9/ee.jpg"
+    ],
+    itinerary: ["Taj Mahal Sunrise","Agra Fort","Local Market Visit","Cultural Program"],
+    gallery: [
+        "https://rishikeshdaytour.com/blog/wp-content/uploads/2024/08/Sunrise-in-Agra-at-the-Taj-Mahal.jpgs",
+        "https://photographytoursinindia.com/wp-content/uploads/2021/04/Agra-fort-2-1-1024x683.jpg",
+        "https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/09/Local-Market-in-Agra.jpg?resize=1200%2C900&ssl=1",
+        "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/75/b9/ee.jpg"
+    ]
+},
+
+shimla: {
+    title: "Shimla Mountain Retreat",
+    banner: "https://images.unsplash.com/photo-1559757175-570fd396f6a8",
+    storyImg: "https://images.unsplash.com/photo-1559757175-570fd396f6a8",
+    tagline: "Snow-capped peaks and charming streets",
+    duration: "3 Nights / 4 Days",
+    price: "₹13,499",
+    group: "Up to 8 people",
+    transport: "Volvo + Cab",
+    story: "Shimla, with its colonial charm, bustling markets, and stunning landscapes, is perfect for a relaxing getaway.",
+    feelings: ["Toy Train Ride","Mall Road Walk","Snow Activities","Local Cuisine"],
+    itineraryImg: [
+        "https://images.unsplash.com/photo-1559757175-570fd396f6a8",
+        "https://images.unsplash.com/photo-1573831331705-5e049d417e2f",
+        "https://images.unsplash.com/photo-1559757175-570fd396f6a8",
+        "https://images.unsplash.com/photo-1573831331705-5e049d417e2f"
+    ],
+    itinerary: ["Arrival & Mall Road","Kufri Visit","Local Sightseeing","Relaxation & Departure"],
+    gallery: [
+        "https://images.unsplash.com/photo-1559757175-570fd396f6a8",
+        "https://images.unsplash.com/photo-1573831331705-5e049d417e2f",
+        "https://images.unsplash.com/photo-1559757175-570fd396f6a8",
+        "https://images.unsplash.com/photo-1573831331705-5e049d417e2f"
+    ]
+},
+
+andaman: {
+    title: "Andaman Island Paradise",
+    banner: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+    storyImg: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+    tagline: "Crystal clear waters and tropical beauty",
+    duration: "4 Nights / 5 Days",
+    price: "₹21,499",
+    group: "Up to 6 people",
+    transport: "Flight + Ferry",
+    story: "Andaman is a tropical paradise offering white sandy beaches, clear waters, and adventurous water sports.",
+    feelings: ["Snorkeling","Scuba Diving","Beach Relaxation","Island Hopping"],
+    itineraryImg: [
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+        "https://images.unsplash.com/photo-1493558103817-58b2924bce98",
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+        "https://images.unsplash.com/photo-1493558103817-58b2924bce98"
+    ],
+    itinerary: ["Arrival & Beach Relaxation","Snorkeling & Diving","Island Tour","Local Market Visit"],
+    gallery: [
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+        "https://images.unsplash.com/photo-1493558103817-58b2924bce98",
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+        "https://images.unsplash.com/photo-1493558103817-58b2924bce98"
+    ]
+},
+
+varanasi: {
+    title: "Varanasi Spiritual Journey",
+    banner: "https://images.unsplash.com/photo-1601933474377-22e91d06158b",
+    storyImg: "https://images.unsplash.com/photo-1601933474377-22e91d06158b",
+    tagline: "Ancient ghats, spiritual vibes",
+    duration: "2 Nights / 3 Days",
+    price: "₹9,999",
+    group: "Up to 6 people",
+    transport: "AC Bus + Cab",
+    story: "Varanasi offers a spiritual journey along the Ganges, with historic temples, vibrant ghats, and serene rituals.",
+    feelings: ["Ghat Visits","Boat Ride","Temple Tours","Cultural Experience"],
+    itineraryImg: [
+        "https://images.unsplash.com/photo-1601933474377-22e91d06158b",
+        "https://images.unsplash.com/photo-1595831874971-b8b7db0f0f69",
+        "https://images.unsplash.com/photo-1601933474377-22e91d06158b",
+        "https://images.unsplash.com/photo-1595831874971-b8b7db0f0f69"
+    ],
+    itinerary: ["Sunrise Boat Ride","Temples Tour","Local Market Walk","Evening Aarti Ceremony"],
+    gallery: [
+        "https://images.unsplash.com/photo-1601933474377-22e91d06158b",
+        "https://images.unsplash.com/photo-1595831874971-b8b7db0f0f69",
+        "https://images.unsplash.com/photo-1601933474377-22e91d06158b",
+        "https://images.unsplash.com/photo-1595831874971-b8b7db0f0f69"
+    ]
+}
+
+
+
+};
+
+/* READ PACKAGE FROM URL OR DEFAULT GOA */
+const key = new URLSearchParams(location.search).get("package") || "goa";
+const d = data[key];
+
+if (!d) {
+  alert("Package not found!");
+  window.location.href = "index.html";
+  return;
+}
+
+/* ---------------- FILL CONTENT ---------------- */
+hero.style.backgroundImage = `url(${d.banner})`;
+storyImg.src = d.storyImg;
+
+title.textContent = d.title;
+tagline.textContent = d.tagline;
+story.textContent = d.story;
+duration.textContent = d.duration;
+price.textContent = d.price;
+group.textContent = d.group;
+transport.textContent = d.transport;
+priceBar.textContent = d.price + " per person";
+
+/* FEELINGS */
+feelings.innerHTML = "";
+d.feelings.forEach(f=>{
+ const div=document.createElement("div");
+ div.className="feel";
+ div.textContent=f;
+ feelings.appendChild(div);
+});
+
+/* ITINERARY */
+journey.innerHTML = "";
+d.itinerary.forEach((text,i)=>{
+ const card=document.createElement("div");
+ card.className="day-card";
+ const imgSrc = d.itineraryImg[i] || "https://via.placeholder.com/120x90?text=No+Image";
+ card.innerHTML=
+ `<img class="day-img" src="${imgSrc}">
+  <div>
+    <div class="day-title">Day ${i+1}</div>
+    <div>${text}</div>
+  </div>`;
+ journey.appendChild(card);
+});
+
+/* GALLERY */
+gallery.innerHTML = "";
+d.gallery.forEach(img=>{
+ const im=document.createElement("img");
+ im.src=img;
+ gallery.appendChild(im);
+});
+
+/* SET PACKAGE NAME FOR FORM */
+document.getElementById("package_name").value = d.title;
+
+/* ----------- BOOKING POPUP LOGIC ----------- */
+reserveBtn.onclick = ()=>{
+ bookingPopup.style.display="flex";
+};
+
+closePopup.onclick = ()=>{
+ bookingPopup.style.display="none";
+};
+
+});
+</script>
+
+</body>
+</html>
